@@ -19,7 +19,7 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_user, only: [:index, :show]
+  before_action :set_user, only: [:show]
 
   # GET /users
   # GET /users.json
