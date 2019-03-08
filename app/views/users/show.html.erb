@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        User:  <%= @user.id %>
+      </div>
+
+      <div class="panel-body">
+        <p>
+          <strong>User Email:</strong>
+          <%= @user.email %>
+        </p>
+
+
+      </div>
+
+
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-success" %> |
+<%= link_to 'Back', user_session_path,  class: "btn btn-default" %>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h1>Comments</h1>
+      </div>
+
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Articles:</th>
+          <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @user.articles.order(created_at: :desc).each do |article| %>
+          <tr>
+            <td><%= article.title %></td>
+            <td><%= link_to 'Show', article %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
