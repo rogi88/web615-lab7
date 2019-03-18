@@ -125,6 +125,10 @@ GEM
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rack-tracker (1.8.0)
+      activesupport (>= 3.0)
+      rack (>= 1.4)
+      tilt (>= 1.4)
     rails (5.1.6.1)
       actioncable (= 5.1.6.1)
       actionmailer (= 5.1.6.1)
@@ -239,6 +243,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.21)
   puma (~> 3.7)
+  rack-tracker
   rails (~> 5.1.4)
   rails-erd
   rails_12factor
