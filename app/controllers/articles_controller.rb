@@ -14,6 +14,8 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
+  before_action :set_article, only:[:show,:edit,:update,:destroy]
+
   # GET /articles
   # GET /articles.json
   def index
@@ -33,27 +35,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    begin
-  rescue ActiveRecord::RecordNotFound => e
-    flash[:alert] = "The article you're looking for cannot be found"
-    respond_to do |format|
-      format.html{
-        redirect_to articles_path
-      }
-      format.json {render :json, status: 404}
-    end
-  rescue => e
-    flash[:alert] = "Something else went wrong"
-    respond_to do |format|
-      format.html{
-        redirect_to articles_path
-      }
-      format.json {render :json, status: 418}
-    end
-  end
 
   end
-
   # GET /articles/new
   def new
     begin
