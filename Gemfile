@@ -62,6 +62,7 @@ group :production do
   gem 'pg', '~> 0.21'
   gem 'rails_12factor'
   gem 'rack-tracker'
+  gem 'newrelic_rpm'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
