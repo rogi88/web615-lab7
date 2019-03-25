@@ -55,6 +55,7 @@ group :development do
   gem 'annotate'
   gem 'sqlite3', '~>1.3.6'
   gem 'rails-erd'
+  gem 'honeybadger', '~> 4.0'
 
 end
 
@@ -63,6 +64,7 @@ group :production do
   gem 'rails_12factor'
   gem 'rack-tracker'
   gem 'newrelic_rpm'
+  gem 'honeybadger', '~> 4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
