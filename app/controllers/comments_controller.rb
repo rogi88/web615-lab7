@@ -13,7 +13,7 @@
 
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :set_comment, only:[:show,:edit,:update,:destroy]
   # GET /comments
   # GET /comments.json
   def index
@@ -38,26 +38,10 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
-    begin
-  rescue ActiveRecord::RecordNotFound => e
-    flash[:alert] = "The comment you're looking for cannot be found"
-    respond_to do |format|
-      format.html{
-        redirect_to comments_path
-      }
-      format.json {render :json, status: 404}
-    end
-  rescue => e
-    flash[:alert] = "Something else went wrong"
-    respond_to do |format|
-      format.html{
-        redirect_to comments_path
-      }
-      format.json {render :json, status: 418}
-    end
-  end
 
   end
+
+
 
   # GET /comments/new
   def new
